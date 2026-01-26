@@ -20,14 +20,12 @@ var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
 var t = Number(lines[0]);
-console.log(t)
 var answers = lines[1].split(" ").map( str => Number(str) );
-console.log(answers)
 
 var cont = 0;
 answers.forEach( (answer) => {
     if (answer === t){
-        cont++
+        cont++;
     }
 } )
 
