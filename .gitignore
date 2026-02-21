@@ -1,0 +1,19 @@
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+gen/
+
+# Maven/Gradle
+target/
+build/
+.gradle/
+.settings/
+.classpath
+.project
+
+# Arquivos de sistema/SO
+.DS_Store
+Thumbs.db
