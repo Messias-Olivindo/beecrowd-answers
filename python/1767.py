@@ -18,22 +18,22 @@ for _ in range(n):
         pesos.append(p)
         qtd_brinq.append(q)
 
-        # Fazer o loop para preencher a matriz:
-        for i in range(1, pac+1):
-            for j in range(1, limit+1):
-                # Primeira validação é saber se o pacote não execede a capacidade da mochila
-                if pesos[i] <= j:
-                    # Agora tem que fazer a comparação do caso antigo de qtd de brinquedos do caso antigo com a inserção da nova quantidade de brinquedos. E o maior valor é preenchido na célula da matriz
-                    antigo = matriz[i-1][j]
-                    novo = matriz[i-1][j - pesos[i]] + qtd_brinq[i]
-                    if antigo > novo:
-                        matriz[i][j] = antigo
-                    else:
-                        matriz[i][j] = novo
-
-                # Caso o pacote seja maior que a capacidade ele deve repetir o valor da célula que está acima dele
+    # Fazer o loop para preencher a matriz:
+    for i in range(1, pac+1):
+        for j in range(1, limit+1):
+            # Primeira validação é saber se o pacote não execede a capacidade da mochila
+            if pesos[i] <= j:
+                # Agora tem que fazer a comparação do caso antigo de qtd de brinquedos do caso antigo com a inserção da nova quantidade de brinquedos. E o maior valor é preenchido na célula da matriz
+                antigo = matriz[i-1][j]
+                novo = matriz[i-1][j - pesos[i]] + qtd_brinq[i]
+                if antigo > novo:
+                    matriz[i][j] = antigo
                 else:
-                    matriz[i][j] = matriz[i - 1][j]
+                    matriz[i][j] = novo
+
+            # Caso o pacote seja maior que a capacidade ele deve repetir o valor da célula que está acima dele
+            else:
+                matriz[i][j] = matriz[i - 1][j]
 
     # Fazer o backtrack para encontrar a solução
     # Declarar as variáveis que serão encontradas no final
